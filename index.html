@@ -2,7 +2,7 @@
 <html lang="fr" data-lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dera Judicaël Ramanamiseta — Élève ingénieur</title>
 <meta name="description" content="Dera Judicaël Ramanamiseta — élève ingénieur généraliste à l'École Centrale Casablanca : génie industriel, systèmes embarqués, data et digitalisation.">
 <meta property="og:title" content="Dera Judicaël Ramanamiseta — Élève ingénieur">
@@ -12,6 +12,8 @@
 <meta property="og:url" content="https://deratech-mg.github.io/">
 <meta property="og:type" content="profile">
 <meta name="author" content="Dera Judicaël Ramanamiseta">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1216" media="(prefers-color-scheme: dark)">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Dera Judicaël Ramanamiseta","alternateName":["Dera Ramanamiseta","Dera Judicael Ramanamiseta"],
 "url":"https://deratech-mg.github.io/","jobTitle":"Élève ingénieur généraliste",
@@ -21,291 +23,454 @@
 "sameAs":["https://www.linkedin.com/in/dera-ramanamiseta-832b612a3/","https://github.com/derajudicael-hash"]}
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f4e79'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='white' text-anchor='middle'%3EDR%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#fbfaf7; --surface:#ffffff; --ink:#1b1f24; --muted:#5b6470; --line:#e4e1da;
-  --accent:#1f4e79; --accent-soft:#e8eef5; --chip:#f1efe9;
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
-  color-scheme: light;
+  --bg:#f7f5f0; --bg-2:#efece4; --surface:#ffffff; --ink:#15191e; --muted:#5a636e; --faint:#8a929b;
+  --line:#e2ded4; --accent:#1f4e79; --accent-2:#2f6ea5; --accent-ink:#ffffff; --accent-soft:#e6edf5; --chip:#f2efe8;
+  --ok:#2e7d4f; --ok-soft:#e3f1e8;
+  --shadow:0 1px 2px rgba(20,25,30,.04),0 8px 24px -12px rgba(20,25,30,.12);
+  --shadow-hover:0 2px 4px rgba(20,25,30,.06),0 18px 40px -16px rgba(20,25,30,.22);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --radius:14px; --max:1040px; --pad:clamp(18px,4vw,32px);
+  color-scheme:light;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){--bg:#121417;--surface:#191c20;--ink:#e8e6e1;--muted:#9aa3ad;--line:#2a2e34;--accent:#8fb4dc;--accent-soft:#1d2836;--chip:#22262b;color-scheme:dark}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0f1216;--bg-2:#14181d;--surface:#171b21;--ink:#ebe8e2;--muted:#a1a9b3;--faint:#727b86;--line:#262b33;--accent:#8db7e3;--accent-2:#b0cdef;--accent-ink:#0f1216;--accent-soft:#1a2633;--chip:#1f242b;--ok:#6fcf97;--ok-soft:#163024;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);--shadow-hover:0 2px 4px rgba(0,0,0,.35),0 18px 40px -16px rgba(0,0,0,.8);color-scheme:dark}
 }
-:root[data-theme="dark"]{--bg:#121417;--surface:#191c20;--ink:#e8e6e1;--muted:#9aa3ad;--line:#2a2e34;--accent:#8fb4dc;--accent-soft:#1d2836;--chip:#22262b;color-scheme:dark}
+:root[data-theme="dark"]{--bg:#0f1216;--bg-2:#14181d;--surface:#171b21;--ink:#ebe8e2;--muted:#a1a9b3;--faint:#727b86;--line:#262b33;--accent:#8db7e3;--accent-2:#b0cdef;--accent-ink:#0f1216;--accent-soft:#1a2633;--chip:#1f242b;--ok:#6fcf97;--ok-soft:#163024;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);--shadow-hover:0 2px 4px rgba(0,0,0,.35),0 18px 40px -16px rgba(0,0,0,.8);color-scheme:dark}
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:920px;margin:0 auto;padding-inline:20px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:clamp(15px,.25vw + 14.2px,16.5px)/1.7 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--accent-2)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+svg.i{width:1.1em;height:1.1em;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:max(var(--pad),env(safe-area-inset-left))}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--accent-ink);padding:8px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:12px}
 
-/* langue */
 html[data-lang="fr"] [lang="en"]:not(html), html[data-lang="en"] [lang="fr"]:not(html){display:none!important}
 
-/* barre */
-header.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;gap:20px;height:58px}
-.brand{font-family:var(--serif);font-size:1.15rem;color:var(--ink);font-weight:600;letter-spacing:.2px}
-.brand:hover{text-decoration:none}
-nav.links{display:flex;gap:18px;margin-left:auto;font-size:.92rem}
-nav.links a{color:var(--muted)}
-nav.links a:hover{color:var(--ink);text-decoration:none}
-.toggles{display:flex;gap:6px}
-.toggles button{font:600 .78rem var(--sans);letter-spacing:.5px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 11px;cursor:pointer}
-.toggles button:hover{border-color:var(--accent)}
-@media (max-width:720px){nav.links{display:none}.toggles{margin-left:auto}}
+/* navigation */
+header.top{position:sticky;top:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+header.top.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 20px -16px rgba(0,0,0,.25)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:600;letter-spacing:.1px;white-space:nowrap}
+.brand:hover{color:var(--ink)}
+.mono{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--accent);color:var(--accent-ink);font:600 .95rem var(--serif)}
+nav.links{display:flex;gap:4px;margin-left:auto}
+nav.links a{position:relative;color:var(--muted);font-size:.93rem;font-weight:500;padding:8px 12px;border-radius:8px}
+nav.links a:hover{color:var(--ink);background:var(--bg-2)}
+nav.links a.active{color:var(--ink)}
+nav.links a.active::after{content:"";position:absolute;left:12px;right:12px;bottom:3px;height:2px;border-radius:2px;background:var(--accent)}
+.tools{display:flex;gap:8px;align-items:center}
+.iconbtn{display:inline-grid;place-items:center;min-width:40px;height:40px;padding:0 12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;cursor:pointer;font:600 .8rem var(--sans);letter-spacing:.6px;transition:border-color .2s,transform .15s,background .2s}
+.iconbtn:hover{border-color:var(--accent)}
+.iconbtn:active{transform:scale(.96)}
+.iconbtn svg.i{width:18px;height:18px}
+#themeBtn .moon{display:none}
+:root[data-theme="dark"] #themeBtn .sun{display:none}
+:root[data-theme="dark"] #themeBtn .moon{display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) #themeBtn .sun{display:none}:root:not([data-theme]) #themeBtn .moon{display:block}}
+#menuBtn{display:none;padding:0}
+@media (max-width:820px){
+  nav.links{position:fixed;inset:calc(66px + env(safe-area-inset-top,0px)) 0 auto 0;flex-direction:column;gap:2px;padding:10px var(--pad) 18px;margin:0;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 20px 30px -20px rgba(0,0,0,.3);transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .2s,transform .2s,visibility .2s}
+  nav.links.open{transform:none;opacity:1;visibility:visible}
+  nav.links a{font-size:1.05rem;padding:13px 12px}
+  nav.links a.active::after{left:0;right:auto;top:12px;bottom:12px;width:3px;height:auto}
+  .tools{margin-left:auto}
+  #menuBtn{display:inline-grid}
+}
+@media (max-width:400px){.brand span:last-child{display:none}.tools{gap:6px}.iconbtn{min-width:38px;height:38px;padding:0 10px}}
 
 /* hero */
-.hero{padding:72px 0 56px;border-bottom:1px solid var(--line)}
-.eyebrow{font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:600}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5.5vw,3.5rem);line-height:1.1;margin:14px 0 18px;letter-spacing:-.5px}
-.lead{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 0 26px}
-.meta{display:flex;flex-wrap:wrap;gap:8px 22px;color:var(--muted);font-size:.93rem;margin-bottom:30px}
+.hero{position:relative;padding:clamp(56px,10vw,112px) 0 clamp(48px,8vw,88px);isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 70% 60% at 75% 30%,#000 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 75% 30%,#000 10%,transparent 70%);opacity:.7}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr}}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:6px 14px 6px 10px;border-radius:999px;background:var(--ok-soft);color:var(--ok);font-size:.84rem;font-weight:600}
+.dot{width:8px;height:8px;border-radius:50%;background:currentColor;animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,currentColor 55%,transparent)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,6.4vw,4.3rem);line-height:1.04;margin:22px 0 20px;letter-spacing:-.02em;font-variation-settings:"opsz" 144}
+h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:clamp(1.05rem,1.4vw,1.22rem);color:var(--muted);max-width:600px;margin:0 0 30px}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:8px;font-weight:600;font-size:.95rem;border:1px solid var(--accent)}
-.btn.primary{background:var(--accent);color:var(--bg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 22px;border-radius:10px;font-weight:600;font-size:.96rem;border:1px solid var(--accent);transition:transform .15s,box-shadow .2s,background .2s,color .2s}
+.btn.primary{background:var(--accent);color:var(--accent-ink);box-shadow:0 8px 20px -10px color-mix(in srgb,var(--accent) 70%,transparent)}
+.btn.primary:hover{color:var(--accent-ink);transform:translateY(-2px);box-shadow:0 14px 28px -12px color-mix(in srgb,var(--accent) 80%,transparent)}
 .btn.ghost{color:var(--accent);background:transparent}
-.btn:hover{text-decoration:none;filter:brightness(1.08)}
+.btn.ghost:hover{background:var(--accent-soft)}
+@media (max-width:480px){.btn{flex:1 1 100%}}
+.idcard{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}
+.idtop{display:flex;align-items:center;gap:16px;padding-bottom:20px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+.avatar{display:grid;place-items:center;width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-ink);font:500 1.6rem var(--serif);flex:none}
+.idtop b{display:block;font-size:1.02rem;line-height:1.3}
+.idtop span{color:var(--muted);font-size:.88rem}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:13px}
+.facts li{display:flex;gap:12px;align-items:flex-start;font-size:.93rem}
+.facts svg.i{color:var(--accent);margin-top:3px}
+.facts small{display:block;color:var(--faint);font-size:.74rem;text-transform:uppercase;letter-spacing:.8px;line-height:1.4}
 
 /* sections */
-section{padding:56px 0;border-bottom:1px solid var(--line)}
-h2{font-family:var(--serif);font-weight:500;font-size:1.75rem;margin:0 0 26px;display:flex;align-items:baseline;gap:14px}
-h2 .n{font:600 .8rem var(--sans);color:var(--accent);letter-spacing:1px}
-.about p{max-width:700px;margin:0 0 14px}
-.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:26px}
-.hl{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
-.hl b{display:block;font-family:var(--serif);font-size:1.25rem;font-weight:500;color:var(--accent)}
-.hl span{font-size:.88rem;color:var(--muted)}
+section{padding:clamp(56px,8vw,96px) 0;border-top:1px solid var(--line)}
+section.alt{background:var(--bg-2)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin-bottom:clamp(28px,4vw,44px)}
+.sec-head .n{font:600 .8rem var(--sans);color:var(--accent);letter-spacing:1.5px}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.8rem,3.6vw,2.5rem);line-height:1.15;margin:0;letter-spacing:-.01em}
+.about-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,5vw,56px);align-items:start}
+@media (max-width:820px){.about-grid{grid-template-columns:1fr}}
+.about-grid p{margin:0 0 16px}
+.stats{display:grid;gap:14px}
+.stat{display:flex;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.stat:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.ic{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent);flex:none}
+.ic svg.i{width:21px;height:21px}
+.stat b{display:block;font:500 1.15rem var(--serif)}
+.stat span{color:var(--muted);font-size:.88rem}
 
-/* frise */
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-@media (max-width:720px){.cols{grid-template-columns:1fr;gap:28px}}
-h3{font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:0 0 16px;font-weight:600}
-.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
-.tl li{position:relative;padding:0 0 22px 20px}
-.tl li::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
-.tl .when{font-size:.82rem;color:var(--accent);font-weight:600}
-.tl .what{font-weight:600}
-.tl .where{color:var(--muted);font-size:.93rem}
-.tl p{margin:4px 0 0;font-size:.93rem}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px)}
+@media (max-width:820px){.cols{grid-template-columns:1fr}}
+h3{display:flex;align-items:center;gap:10px;font-size:.8rem;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin:0 0 22px;font-weight:600}
+h3 svg.i{color:var(--accent);width:18px;height:18px}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--accent),var(--line))}
+.tl li{position:relative;padding:0 0 18px 34px}
+.tl li::before{content:"";position:absolute;left:0;top:22px;width:16px;height:16px;border-radius:50%;background:var(--bg-2);border:3px solid var(--accent)}
+.tl .box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s,border-color .2s}
+.tl .box:hover{transform:translateX(3px);box-shadow:var(--shadow-hover);border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
+.tl .when{display:inline-block;font-size:.78rem;color:var(--accent);font-weight:600;background:var(--accent-soft);padding:2px 9px;border-radius:999px;margin-bottom:8px}
+.tl .what{font-weight:600;line-height:1.35}
+.tl .where{color:var(--muted);font-size:.9rem}
+.tl p{margin:8px 0 0;font-size:.92rem}
 
-/* compétences */
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px}
-.card h4{margin:0 0 12px;font-size:1rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.card .ic{margin-bottom:14px}
+.card h4{margin:0 0 14px;font-size:1rem;line-height:1.35}
 .chips{display:flex;flex-wrap:wrap;gap:7px}
-.chips span{background:var(--chip);border-radius:6px;padding:4px 10px;font-size:.85rem}
-.langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:22px}
-.lang{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dashed var(--line);padding:8px 0}
-.lang small{color:var(--muted)}
-.engage{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:10px}
-.engage li{padding-left:18px;position:relative}
-.engage li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+.chips span{background:var(--chip);border:1px solid var(--line);border-radius:7px;padding:3px 10px;font-size:.84rem}
+.sub{margin-top:clamp(36px,5vw,52px)}
+.lang{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.lang b{font-weight:600}
+.lang small{grid-column:1/-1;color:var(--muted);font-size:.86rem}
+.meter{display:flex;gap:4px;justify-self:end}
+.meter i{width:22px;height:6px;border-radius:3px;background:var(--line)}
+.meter i.on{background:var(--accent)}
+.engage{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.engage li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem}
+.engage svg.i{color:var(--accent);margin-top:4px}
 
-/* contact */
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-.contact-grid a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;color:var(--ink)}
-.contact-grid a:hover{border-color:var(--accent);text-decoration:none}
-.contact-grid small{display:block;color:var(--muted);font-size:.8rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
-.contact-grid span{word-break:break-all;color:var(--accent);font-weight:600}
-footer{padding:30px 0 40px;color:var(--muted);font-size:.85rem;text-align:center}
+.contact-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(24px,4vw,48px);align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,44px);box-shadow:var(--shadow)}
+@media (max-width:820px){.contact-box{grid-template-columns:1fr}}
+.contact-box p{color:var(--muted);margin:14px 0 0}
+.clist{display:grid;gap:12px}
+.clist a{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;color:var(--ink);background:var(--bg);transition:border-color .2s,transform .15s}
+.clist a:hover{border-color:var(--accent);transform:translateY(-2px);color:var(--ink)}
+.clist .ic{width:40px;height:40px;border-radius:10px}
+.clist div{min-width:0}
+.clist small{display:block;color:var(--faint);font-size:.75rem;letter-spacing:1px;text-transform:uppercase}
+.clist span{font-weight:600;font-size:clamp(.9rem,3.6vw,1rem);overflow-wrap:break-word}
+.clist .arrow{margin-left:auto;color:var(--faint);transition:transform .2s,color .2s}
+.clist a:hover .arrow{transform:translateX(3px);color:var(--accent)}
+
+footer{padding:34px 0 calc(34px + env(safe-area-inset-bottom,0px));color:var(--faint);font-size:.86rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;align-items:center}
+.totop{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s,transform .25s,visibility .25s;box-shadow:var(--shadow)}
+.totop.show{opacity:1;visibility:visible;transform:none}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.no-js .reveal{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+@media print{header.top,.totop{display:none}.reveal{opacity:1;transform:none}section{break-inside:avoid}}
 </style>
 </head>
-<body>
+<body class="no-js">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></symbol>
+  <symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M19 19v2H6"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="6" rx="1.5"/><rect x="14" y="15" width="7" height="6" rx="1.5"/><path d="M6.5 9v4a2 2 0 0 0 2 2H14"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.4C1.6 7 4 4 7.2 4c2 0 3.6 1.1 4.8 2.8C13.2 5.1 14.8 4 16.8 4 20 4 22.4 7 21.2 10.6 19.5 15.4 12 20 12 20z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.5v.01M12 16v-5.5M12 13c0-1.7 1-2.7 2.4-2.7S16.5 11 16.5 13v3"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+</svg>
+<a class="skip" href="#main"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
 
-<header class="top">
+<header class="top" id="top">
   <div class="wrap">
-    <a class="brand" href="#">Dera Ramanamiseta</a>
-    <nav class="links">
+    <a class="brand" href="#" aria-label="Accueil"><span class="mono">DR</span><span>Dera Ramanamiseta</span></a>
+    <nav class="links" id="nav" aria-label="Navigation principale">
       <a href="#apropos"><span lang="fr">À propos</span><span lang="en">About</span></a>
       <a href="#parcours"><span lang="fr">Parcours</span><span lang="en">Background</span></a>
       <a href="#competences"><span lang="fr">Compétences</span><span lang="en">Skills</span></a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="toggles">
-      <button id="langBtn" type="button" aria-label="Changer de langue / Switch language">EN</button>
-      <button id="themeBtn" type="button" aria-label="Thème clair ou sombre">◐</button>
+    <div class="tools">
+      <button class="iconbtn" id="langBtn" type="button" aria-label="Changer de langue / Switch language">EN</button>
+      <button class="iconbtn" id="themeBtn" type="button" aria-label="Thème clair ou sombre"><svg class="i sun"><use href="#i-sun"/></svg><svg class="i moon"><use href="#i-moon"/></svg></button>
+      <button class="iconbtn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg class="i"><use href="#i-menu"/></svg></button>
     </div>
   </div>
 </header>
 
-<main>
+<main id="main">
 <div class="wrap">
-
   <div class="hero">
-    <div class="eyebrow"><span lang="fr">Élève ingénieur généraliste</span><span lang="en">Generalist engineering student</span></div>
-    <h1>Dera Judicaël<br>Ramanamiseta</h1>
-    <p class="lead">
-      <span lang="fr">Génie industriel, systèmes embarqués, data et digitalisation — au service de l'énergie, de l'eau, de la santé et de l'agroalimentaire.</span>
-      <span lang="en">Industrial engineering, embedded systems, data and digitalization — applied to energy, water, health and agri-food.</span>
-    </p>
-    <div class="meta">
-      <span>📍 Casablanca, <span lang="fr">Maroc</span><span lang="en">Morocco</span></span>
-      <span>🎓 École Centrale Casablanca — <span lang="fr">4ᵉ année</span><span lang="en">4th year</span></span>
-      <span>🌍 <span lang="fr">Originaire de Madagascar</span><span lang="en">From Madagascar</span></span>
-    </div>
-    <div class="btns">
-      <a class="btn primary" lang="fr" href="cv/CV_Dera_Ramanamiseta_FR.pdf" target="_blank" rel="noopener">⬇ Télécharger mon CV</a>
-      <a class="btn primary" lang="en" href="cv/CV_Dera_Ramanamiseta_EN.pdf" target="_blank" rel="noopener">⬇ Download my resume</a>
-      <a class="btn ghost" href="#contact"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span></a>
+    <div class="hero-grid">
+      <div class="reveal">
+        <span class="badge"><span class="dot"></span><span lang="fr">Disponible pour un PFE, février 2027</span><span lang="en">Available for a final-year internship, Feb. 2027</span></span>
+        <h1>Dera Judicaël <em>Ramanamiseta</em></h1>
+        <p class="lead">
+          <span lang="fr">Élève ingénieur généraliste. Génie industriel, systèmes embarqués, data et digitalisation, au service de l'énergie, de l'eau, de la santé et de l'agroalimentaire.</span>
+          <span lang="en">Generalist engineering student. Industrial engineering, embedded systems, data and digitalization, applied to energy, water, health and agri-food.</span>
+        </p>
+        <div class="btns">
+          <a class="btn primary" lang="fr" href="cv/CV_Dera_Ramanamiseta_FR.pdf" target="_blank" rel="noopener"><svg class="i"><use href="#i-down"/></svg>Télécharger mon CV</a>
+          <a class="btn primary" lang="en" href="cv/CV_Dera_Ramanamiseta_EN.pdf" target="_blank" rel="noopener"><svg class="i"><use href="#i-down"/></svg>Download my resume</a>
+          <a class="btn ghost" href="#contact"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span><svg class="i"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <aside class="idcard reveal" aria-label="En bref">
+        <div class="idtop">
+          <div class="avatar" aria-hidden="true">DR</div>
+          <div><b>Dera Judicaël Ramanamiseta</b><span lang="fr">Bachelor of Engineering, 4ᵉ année</span><span lang="en">Bachelor of Engineering, 4th year</span></div>
+        </div>
+        <ul class="facts">
+          <li><svg class="i"><use href="#i-cap"/></svg><div><small lang="fr">École</small><small lang="en">School</small>École Centrale Casablanca</div></li>
+          <li><svg class="i"><use href="#i-pin"/></svg><div><small lang="fr">Basé à</small><small lang="en">Based in</small>Casablanca, <span lang="fr">Maroc</span><span lang="en">Morocco</span></div></li>
+          <li><svg class="i"><use href="#i-globe"/></svg><div><small lang="fr">Origine</small><small lang="en">From</small>Madagascar</div></li>
+          <li><svg class="i"><use href="#i-target"/></svg><div><small lang="fr">Recherche</small><small lang="en">Looking for</small><span lang="fr">Stage PFE de 6 mois</span><span lang="en">6-month PFE internship</span></div></li>
+        </ul>
+      </aside>
     </div>
   </div>
+</div>
 
-  <section id="apropos" class="about">
-    <h2><span class="n">01</span><span lang="fr">À propos</span><span lang="en">About</span></h2>
-    <p lang="fr">Élève en 4ᵉ année du Bachelor of Engineering de l'École Centrale Casablanca, formation dispensée en anglais, avec une mobilité académique de six mois à l'Institut 2iE (Burkina Faso). Ma formation est généraliste : génie industriel, optimisation des processus, automatique, systèmes embarqués, bases de données et analyse de données.</p>
-    <p lang="fr">Ce qui m'intéresse : utiliser le numérique, l'IoT et la donnée pour rendre des systèmes concrets plus fiables et plus efficaces — dans l'industrie, l'énergie, l'eau, la santé ou l'agroalimentaire. Je recherche un <b>stage de fin d'études (PFE) de 6 mois à partir de février 2027</b>, puis une poursuite en Master d'ingénierie.</p>
-    <p lang="en">4th-year Bachelor of Engineering student at École Centrale Casablanca (taught in English), including a six-month academic exchange at the 2iE Institute (Burkina Faso). My background is broad: industrial engineering, process optimization, control systems, embedded systems, databases and data analysis.</p>
-    <p lang="en">What drives me: using digital tools, IoT and data to make real-world systems more reliable and efficient — in industry, energy, water, health and agri-food. I am looking for a <b>6-month final-year internship (PFE) starting February 2027</b>, followed by an engineering Master's degree.</p>
-    <div class="highlights">
-      <div class="hl"><b>Mastercard Foundation</b><span lang="fr">Boursier d'études et de vie, 2024–2027</span><span lang="en">Scholar, 2024–2027</span></div>
-      <div class="hl"><b>3 <span lang="fr">pays</span><span lang="en">countries</span></b><span lang="fr">Madagascar, Maroc, Burkina Faso</span><span lang="en">Madagascar, Morocco, Burkina Faso</span></div>
-      <div class="hl"><b>3 <span lang="fr">stages</span><span lang="en">internships</span></b><span lang="fr">Agroalimentaire, santé publique, mécanique</span><span lang="en">Agri-food, public health, mechanics</span></div>
+<section id="apropos">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="n">01</span><h2><span lang="fr">À propos</span><span lang="en">About</span></h2></div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p lang="fr">Élève en 4ᵉ année du Bachelor of Engineering de l'École Centrale Casablanca, formation dispensée en anglais, avec une mobilité académique de six mois à l'Institut 2iE (Burkina Faso). Ma formation est généraliste : génie industriel, optimisation des processus, automatique, systèmes embarqués, bases de données et analyse de données.</p>
+        <p lang="fr">Ce qui m'intéresse : utiliser le numérique, l'IoT et la donnée pour rendre des systèmes concrets plus fiables et plus efficaces, dans l'industrie, l'énergie, l'eau, la santé ou l'agroalimentaire. Je recherche un <b>stage de fin d'études (PFE) de 6 mois à partir de février 2027</b>, puis une poursuite en Master d'ingénierie.</p>
+        <p lang="en">4th-year Bachelor of Engineering student at École Centrale Casablanca (taught in English), including a six-month academic exchange at the 2iE Institute (Burkina Faso). My background is broad: industrial engineering, process optimization, control systems, embedded systems, databases and data analysis.</p>
+        <p lang="en">What drives me: using digital tools, IoT and data to make real-world systems more reliable and efficient, in industry, energy, water, health and agri-food. I am looking for a <b>6-month final-year internship (PFE) starting February 2027</b>, followed by an engineering Master's degree.</p>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><div class="ic"><svg class="i"><use href="#i-award"/></svg></div><div><b>Mastercard Foundation</b><span lang="fr">Boursier d'études et de vie, 2024–2027</span><span lang="en">Scholar, 2024–2027</span></div></div>
+        <div class="stat"><div class="ic"><svg class="i"><use href="#i-globe"/></svg></div><div><b>3 <span lang="fr">pays</span><span lang="en">countries</span></b><span>Madagascar, <span lang="fr">Maroc</span><span lang="en">Morocco</span>, Burkina Faso</span></div></div>
+        <div class="stat"><div class="ic"><svg class="i"><use href="#i-brief"/></svg></div><div><b>3 <span lang="fr">stages</span><span lang="en">internships</span></b><span lang="fr">Agroalimentaire, santé publique, mécanique</span><span lang="en">Agri-food, public health, mechanics</span></div></div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="parcours">
-    <h2><span class="n">02</span><span lang="fr">Parcours</span><span lang="en">Background</span></h2>
+<section id="parcours" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="n">02</span><h2><span lang="fr">Parcours</span><span lang="en">Background</span></h2></div>
     <div class="cols">
-      <div>
-        <h3><span lang="fr">Formation</span><span lang="en">Education</span></h3>
+      <div class="reveal">
+        <h3><svg class="i"><use href="#i-book"/></svg><span lang="fr">Formation</span><span lang="en">Education</span></h3>
         <ul class="tl">
-          <li>
-            <div class="when">2023 – 2027</div>
+          <li><div class="box">
+            <span class="when">2023 – 2027</span>
             <div class="what">Bachelor of Engineering</div>
             <div class="where">École Centrale Casablanca, <span lang="fr">Maroc</span><span lang="en">Morocco</span></div>
             <p lang="fr">Génie industriel, optimisation, automatique, systèmes embarqués, IA et machine learning, bases de données, gestion de projet.</p>
-            <p lang="en">Industrial engineering, optimization, control, embedded systems, AI &amp; machine learning, databases, project management.</p>
-          </li>
-          <li>
-            <div class="when">2026</div>
-            <div class="what"><span lang="fr">Licence en Sciences et Technologies</span><span lang="en">Bachelor's degree in Science &amp; Technology</span></div>
-            <div class="where">Institut 2iE, Burkina Faso — <span lang="fr">partenariat ECC</span><span lang="en">ECC partnership</span></div>
+            <p lang="en">Industrial engineering, optimization, control, embedded systems, AI and machine learning, databases, project management.</p>
+          </div></li>
+          <li><div class="box">
+            <span class="when">2026</span>
+            <div class="what"><span lang="fr">Licence en Sciences et Technologies</span><span lang="en">Bachelor's degree in Science and Technology</span></div>
+            <div class="where">Institut 2iE, Burkina Faso, <span lang="fr">partenariat ECC</span><span lang="en">ECC partnership</span></div>
             <p lang="fr">Mobilité académique de six mois.</p>
             <p lang="en">Six-month academic exchange.</p>
-          </li>
-          <li>
-            <div class="when">2020 – 2022</div>
+          </div></li>
+          <li><div class="box">
+            <span class="when">2020 – 2022</span>
             <div class="what"><span lang="fr">Baccalauréat scientifique (série D)</span><span lang="en">Scientific Baccalaureate (Series D)</span></div>
             <div class="where">École Frédéric Levavasseur, Madagascar</div>
-          </li>
+          </div></li>
         </ul>
       </div>
-      <div>
-        <h3><span lang="fr">Expériences</span><span lang="en">Experience</span></h3>
+      <div class="reveal">
+        <h3><svg class="i"><use href="#i-brief"/></svg><span lang="fr">Expériences</span><span lang="en">Experience</span></h3>
         <ul class="tl">
-          <li>
-            <div class="when">2026 · <span lang="fr">3 mois</span><span lang="en">3 months</span></div>
+          <li><div class="box">
+            <span class="when">2026 · <span lang="fr">3 mois</span><span lang="en">3 months</span></span>
             <div class="what"><span lang="fr">Stage de fin de licence</span><span lang="en">Bachelor's final internship</span></div>
-            <div class="where">InnoFaso — <span lang="fr">agroalimentaire</span><span lang="en">agri-food</span></div>
+            <div class="where">InnoFaso, <span lang="fr">agroalimentaire</span><span lang="en">agri-food</span></div>
             <p lang="fr">Conception et tests, en équipe de 4, d'un dispositif à base de systèmes embarqués pour prévenir la contamination microbienne.</p>
             <p lang="en">Designed and tested, in a team of 4, an embedded-systems device to prevent microbial contamination.</p>
-          </li>
-          <li>
-            <div class="when">2025 · <span lang="fr">3 mois</span><span lang="en">3 months</span></div>
+          </div></li>
+          <li><div class="box">
+            <span class="when">2025 · <span lang="fr">3 mois</span><span lang="en">3 months</span></span>
             <div class="what"><span lang="fr">Stage découverte de l'entreprise</span><span lang="en">Company internship</span></div>
-            <div class="where">PSI Madagascar — <span lang="fr">santé publique</span><span lang="en">public health</span></div>
+            <div class="where">PSI Madagascar, <span lang="fr">santé publique</span><span lang="en">public health</span></div>
             <p lang="fr">Appui au département Subgrant et participation au développement d'une application web de suivi des patients tuberculose (TBTrack) et de sa base de données.</p>
             <p lang="en">Supported the Subgrant department and helped build a web application for tuberculosis patient follow-up (TBTrack) and its database.</p>
-          </li>
-          <li>
-            <div class="when">2024 · <span lang="fr">2 mois</span><span lang="en">2 months</span></div>
+          </div></li>
+          <li><div class="box">
+            <span class="when">2024 · <span lang="fr">2 mois</span><span lang="en">2 months</span></span>
             <div class="what"><span lang="fr">Stage technique</span><span lang="en">Technical internship</span></div>
             <div class="where"><span lang="fr">Atelier de mécanique automobile</span><span lang="en">Automotive repair workshop</span></div>
             <p lang="fr">Immersion en atelier et assistance aux opérations techniques.</p>
             <p lang="en">Hands-on workshop immersion and support for technical operations.</p>
-          </li>
+          </div></li>
         </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="competences">
-    <h2><span class="n">03</span><span lang="fr">Compétences</span><span lang="en">Skills</span></h2>
+<section id="competences">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="n">03</span><h2><span lang="fr">Compétences</span><span lang="en">Skills</span></h2></div>
     <div class="skills">
-      <div class="card">
-        <h4><span lang="fr">Génie industriel &amp; processus</span><span lang="en">Industrial engineering &amp; processes</span></h4>
+      <div class="card reveal">
+        <div class="ic"><svg class="i"><use href="#i-flow"/></svg></div>
+        <h4><span lang="fr">Génie industriel et processus</span><span lang="en">Industrial engineering and processes</span></h4>
         <div class="chips"><span>BPMN</span><span>Bonita Studio</span><span>Bizagi</span><span lang="fr">Optimisation</span><span lang="en">Optimization</span><span>KPI</span><span>Lean / 5S</span><span lang="fr">Gestion de projet</span><span lang="en">Project management</span></div>
       </div>
-      <div class="card">
-        <h4><span lang="fr">Systèmes embarqués &amp; automatique</span><span lang="en">Embedded systems &amp; control</span></h4>
+      <div class="card reveal">
+        <div class="ic"><svg class="i"><use href="#i-chip"/></svg></div>
+        <h4><span lang="fr">Systèmes embarqués et automatique</span><span lang="en">Embedded systems and control</span></h4>
         <div class="chips"><span>Arduino</span><span lang="fr">Capteurs / IoT</span><span lang="en">Sensors / IoT</span><span>Tinkercad</span><span>Scilab</span><span>MATLAB</span><span lang="fr">Asservissement</span><span lang="en">Feedback control</span></div>
       </div>
-      <div class="card">
-        <h4><span lang="fr">Data &amp; bases de données</span><span lang="en">Data &amp; databases</span></h4>
+      <div class="card reveal">
+        <div class="ic"><svg class="i"><use href="#i-db"/></svg></div>
+        <h4><span lang="fr">Data et bases de données</span><span lang="en">Data and databases</span></h4>
         <div class="chips"><span>Python (Pandas)</span><span>SQL / MySQL</span><span>NoSQL / MongoDB</span><span>Hadoop</span><span>Excel</span><span>Machine learning</span></div>
       </div>
-      <div class="card">
+      <div class="card reveal">
+        <div class="ic"><svg class="i"><use href="#i-code"/></svg></div>
         <h4><span lang="fr">Développement</span><span lang="en">Software development</span></h4>
         <div class="chips"><span>Flask</span><span>React</span><span>Node.js</span><span>API REST</span><span>Java (MVC)</span><span>Git / GitHub</span></div>
       </div>
     </div>
 
-    <div class="cols" style="margin-top:34px">
-      <div>
-        <h3><span lang="fr">Langues</span><span lang="en">Languages</span></h3>
-        <div class="lang"><span lang="fr">Malgache</span><span lang="en">Malagasy</span><small><span lang="fr">Langue maternelle</span><span lang="en">Native</span></small></div>
-        <div class="lang"><span lang="fr">Français</span><span lang="en">French</span><small><span lang="fr">Courant (C1)</span><span lang="en">Fluent (C1)</span></small></div>
-        <div class="lang"><span lang="fr">Anglais</span><span lang="en">English</span><small><span lang="fr">B1 — TOEIC 680 · études en anglais</span><span lang="en">B1 — TOEIC 680 · studies taught in English</span></small></div>
+    <div class="cols sub">
+      <div class="reveal">
+        <h3><svg class="i"><use href="#i-chat"/></svg><span lang="fr">Langues</span><span lang="en">Languages</span></h3>
+        <div class="lang"><b lang="fr">Malgache</b><b lang="en">Malagasy</b><span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><small lang="fr">Langue maternelle</small><small lang="en">Native</small></div>
+        <div class="lang"><b lang="fr">Français</b><b lang="en">French</b><span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><small lang="fr">Courant (C1)</small><small lang="en">Fluent (C1)</small></div>
+        <div class="lang"><b lang="fr">Anglais</b><b lang="en">English</b><span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><small lang="fr">B1, TOEIC 680, études suivies en anglais</small><small lang="en">B1, TOEIC 680, studies taught in English</small></div>
       </div>
-      <div>
-        <h3><span lang="fr">Engagements</span><span lang="en">Involvement</span></h3>
-        <ul class="engage" style="margin-top:0">
-          <li><span lang="fr">Boursier de la Mastercard Foundation (2024–2027)</span><span lang="en">Mastercard Foundation Scholar (2024–2027)</span></li>
-          <li>Junior Entreprise Centrale Casablanca — <span lang="fr">pôle Innovation &amp; Consulting</span><span lang="en">Innovation &amp; Consulting unit</span></li>
-          <li>Centrale Aviation &amp; Aerospace Association — <span lang="fr">membre technique</span><span lang="en">technical member</span></li>
-          <li><span lang="fr">Association TSINGY Maroc — ateliers éducatifs et sensibilisation</span><span lang="en">TSINGY Morocco association — educational workshops and outreach</span></li>
-          <li><span lang="fr">Give Back — tutorat et ateliers académiques (2024)</span><span lang="en">Give Back — tutoring and academic workshops (2024)</span></li>
+      <div class="reveal">
+        <h3><svg class="i"><use href="#i-heart"/></svg><span lang="fr">Engagements</span><span lang="en">Involvement</span></h3>
+        <ul class="engage">
+          <li><svg class="i"><use href="#i-check"/></svg><span><span lang="fr">Boursier de la Mastercard Foundation (2024–2027)</span><span lang="en">Mastercard Foundation Scholar (2024–2027)</span></span></li>
+          <li><svg class="i"><use href="#i-check"/></svg><span>Junior Entreprise Centrale Casablanca, <span lang="fr">pôle Innovation et Consulting</span><span lang="en">Innovation and Consulting unit</span></span></li>
+          <li><svg class="i"><use href="#i-check"/></svg><span>Centrale Aviation &amp; Aerospace Association, <span lang="fr">membre technique</span><span lang="en">technical member</span></span></li>
+          <li><svg class="i"><use href="#i-check"/></svg><span><span lang="fr">Association TSINGY Maroc : ateliers éducatifs et sensibilisation</span><span lang="en">TSINGY Morocco association: educational workshops and outreach</span></span></li>
+          <li><svg class="i"><use href="#i-check"/></svg><span><span lang="fr">Give Back : tutorat et ateliers académiques (2024)</span><span lang="en">Give Back: tutoring and academic workshops (2024)</span></span></li>
         </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact">
-    <h2><span class="n">04</span>Contact</h2>
-    <p style="max-width:640px;margin:0 0 24px">
-      <span lang="fr">Pour un stage, une collaboration ou une simple question, écrivez-moi : je réponds rapidement.</span>
-      <span lang="en">For an internship, a collaboration or just a question, feel free to write — I reply quickly.</span>
-    </p>
-    <div class="contact-grid">
-      <a href="mailto:derajudicael@gmail.com"><small>E-mail</small><span>derajudicael@gmail.com</span></a>
-      <a href="https://www.linkedin.com/in/dera-ramanamiseta-832b612a3/" target="_blank" rel="noopener"><small>LinkedIn</small><span>dera-ramanamiseta</span></a>
-      <a href="https://github.com/derajudicael-hash" target="_blank" rel="noopener"><small>GitHub</small><span>derajudicael-hash</span></a>
+<section id="contact" class="alt">
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <div>
+        <div class="sec-head" style="margin-bottom:0"><span class="n">04</span><h2>Contact</h2></div>
+        <p lang="fr">Pour un stage, une collaboration ou une simple question, écrivez-moi : je réponds rapidement.</p>
+        <p lang="en">For an internship, a collaboration or just a question, feel free to write. I reply quickly.</p>
+      </div>
+      <div class="clist">
+        <a href="mailto:derajudicael@gmail.com"><span class="ic"><svg class="i"><use href="#i-mail"/></svg></span><div><small>E-mail</small><span>derajudicael<wbr>@gmail.com</span></div><svg class="i arrow"><use href="#i-arrow"/></svg></a>
+        <a href="https://www.linkedin.com/in/dera-ramanamiseta-832b612a3/" target="_blank" rel="noopener"><span class="ic"><svg class="i"><use href="#i-in"/></svg></span><div><small>LinkedIn</small><span>dera-ramanamiseta</span></div><svg class="i arrow"><use href="#i-arrow"/></svg></a>
+        <a href="https://github.com/derajudicael-hash" target="_blank" rel="noopener"><span class="ic"><svg class="i"><use href="#i-gh"/></svg></span><div><small>GitHub</small><span>derajudicael-hash</span></div><svg class="i arrow"><use href="#i-arrow"/></svg></a>
+      </div>
     </div>
-  </section>
-
-</div>
+  </div>
+</section>
 </main>
 
 <footer>
-  <div class="wrap">© <span id="yr">2026</span> Dera Judicaël Ramanamiseta</div>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Dera Judicaël Ramanamiseta</span>
+    <span>Casablanca · Madagascar</span>
+  </div>
 </footer>
+<button class="iconbtn totop" id="toTop" type="button" aria-label="Revenir en haut"><svg class="i"><use href="#i-up"/></svg></button>
 
 <script>
 (function(){
-  var root = document.documentElement;
-  function get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
-  function set(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+  var root=document.documentElement, body=document.body;
+  body.classList.remove('no-js');
+  function get(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function set(k,v){try{localStorage.setItem(k,v)}catch(e){}}
 
-  var langBtn = document.getElementById('langBtn');
+  var langBtn=document.getElementById('langBtn');
   function setLang(l){
-    root.setAttribute('data-lang', l); root.setAttribute('lang', l);
-    langBtn.textContent = l === 'fr' ? 'EN' : 'FR';
-    document.title = l === 'fr' ? 'Dera Judicaël Ramanamiseta — Élève ingénieur' : 'Dera Judicaël Ramanamiseta — Engineering student';
-    set('lang', l);
+    root.setAttribute('data-lang',l); root.setAttribute('lang',l);
+    langBtn.textContent=l==='fr'?'EN':'FR';
+    document.title=l==='fr'?'Dera Judicaël Ramanamiseta — Élève ingénieur':'Dera Judicaël Ramanamiseta — Engineering student';
+    set('lang',l);
   }
-  var q = new URLSearchParams(location.search).get('lang');
-  setLang(q === 'en' || q === 'fr' ? q : (get('lang') || ((navigator.language || 'fr').slice(0,2) === 'fr' ? 'fr' : 'en')));
-  langBtn.addEventListener('click', function(){ setLang(root.getAttribute('data-lang') === 'fr' ? 'en' : 'fr'); });
+  var q=new URLSearchParams(location.search).get('lang');
+  setLang(q==='en'||q==='fr'?q:(get('lang')||((navigator.language||'fr').slice(0,2)==='fr'?'fr':'en')));
+  langBtn.addEventListener('click',function(){setLang(root.getAttribute('data-lang')==='fr'?'en':'fr')});
 
-  var t = get('theme'); if (t) root.setAttribute('data-theme', t);
-  document.getElementById('themeBtn').addEventListener('click', function(){
-    var dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme') === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-    var next = dark ? 'light' : 'dark'; root.setAttribute('data-theme', next); set('theme', next);
+  var t=get('theme'); if(t) root.setAttribute('data-theme',t);
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme'), dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+    var next=dark?'light':'dark'; root.setAttribute('data-theme',next); set('theme',next);
   });
-  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var nav=document.getElementById('nav'), menuBtn=document.getElementById('menuBtn');
+  function icon(n){menuBtn.innerHTML='<svg class="i"><use href="#i-'+n+'"/></svg>'}
+  function closeMenu(){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');icon('menu')}
+  menuBtn.addEventListener('click',function(){var open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open);icon(open?'x':'menu')});
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
+  document.addEventListener('click',function(e){if(nav.classList.contains('open')&&!e.target.closest('#nav,#menuBtn'))closeMenu()});
+  addEventListener('resize',function(){if(innerWidth>820)closeMenu()});
+
+  var header=document.getElementById('top'), toTop=document.getElementById('toTop');
+  function onScroll(){var y=scrollY;header.classList.toggle('scrolled',y>8);toTop.classList.toggle('show',y>700)}
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  toTop.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%4)*60+'ms';io.observe(el)});
+    var links={}; nav.querySelectorAll('a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
+    var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){for(var k in links)links[k].classList.toggle('active',k===e.target.id)}})},{rootMargin:'-45% 0px -50% 0px'});
+    document.querySelectorAll('main section[id]').forEach(function(s){so.observe(s)});
+  }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')})}
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
 })();
 </script>
 </body>
